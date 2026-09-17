@@ -1,0 +1,54 @@
+image_topic: /left_camera/image/compressed
+height_topic: /dji_osdk_ros/height_above_takeoff
+image_time_offset_s: -0.1
+camera_image_size:
+- 2448
+- 2048
+images_undistorted: false
+fastlio_config: config/bag/fastlio_avia.yaml
+takeoff:
+  min_height: 60.0
+  cruise_fraction: 0.5
+  max_climb_speed: 1.0
+  stable_seconds: 3.0
+selection:
+  tracking_width: 640
+  parallax_px: 12.0
+  min_tracks: 60
+  min_track_ratio: 0.25
+  min_baseline_m: 0.5
+  max_features: 800
+  candidate_interval_s: 0.2
+sources:
+  intrinsics: https://github.com/sijieaaa/UAVScenes/blob/main/calibration_results.py
+  extrinsics_and_timing: https://github.com/hku-mars/FAST-LIVO2/blob/main/config/MARS_LVIG.yaml
+camera_matrix:
+- 1444.43
+- 0
+- 1177.8
+- 0
+- 1444.34
+- 1043.6
+- 0
+- 0
+- 1
+distortion:
+- -0.053
+- 0.121
+- 0.00127
+- 0.00043
+- -0.06495
+lidar_to_camera_R:
+- 0.00438814
+- -0.999807
+- -0.0191582
+- -0.00978695
+- 0.0191145
+- -0.999769
+- 0.999942
+- 0.00457463
+- -0.00970118
+lidar_to_camera_t:
+- 0.016069
+- 0.0871753
+- -0.0718021

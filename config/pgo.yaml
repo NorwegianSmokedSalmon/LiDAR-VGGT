@@ -1,0 +1,42 @@
+# SE(3) optimization after metric Sim(3) registration; chunk scales stay fixed.
+# The first camera pose is removed from the variables (infinite prior weight).
+prior:
+  mode: sequence_first  # or chunk_first: fix each chunk start to its metric initial pose
+weights:
+  odometry: 10.0
+  overlap_icp: 1.0
+noise:
+  translation_sigma_m: 0.2
+  rotation_sigma_deg: 1.0
+observations:
+  grid_side: 64
+  confidence_percentile: 50.0
+  max_relative_depth_jump: 0.05
+  min_depth_m: 0.5
+  max_depth_m: 300.0
+  export_sample_ratio: 0.05
+  seed: 0
+icp:
+  min_pairs: 80
+  min_inlier_ratio: 0.25
+  ransac_threshold_m: 3.0
+  ransac_iterations: 256
+  max_correspondence_distance_m: 1.0
+  max_median_error_m: 3.0
+  iterations: 30
+solver:
+  max_nfev: 150
+  ftol: 0.00001
+  icp_huber_delta: 3.0
+  warm_start: true
+tuning:
+  overlap_icp_weights: [0.1, 0.3, 1.0]
+export:
+  voxel_size_m: 0.1
+# Original VGGT's pointmap head has larger cross-chunk geometric variation.
+# Keep stricter gates for Pi3/Omega; record these resolved values per run.
+model_overrides:
+  vggt:
+    icp:
+      ransac_threshold_m: 5.0
+      max_median_error_m: 5.0

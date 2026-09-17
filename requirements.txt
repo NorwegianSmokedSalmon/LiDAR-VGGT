@@ -1,0 +1,15 @@
+# Install torch==2.8.0 and torchvision==0.23.0 separately; see tools/setup_env.sh.
+numpy==1.26.4
+scipy==1.15.3
+open3d==0.19.0
+opencv-python==4.11.0.86
+matplotlib==3.10.9
+PyYAML==6.0.3
+roma==1.6.1
+huggingface-hub==0.36.2
+requests==2.34.2
+einops==0.8.2
+safetensors==0.8.0
+Pillow==12.3.0
+tqdm==4.70.1
+rosbags==0.11.3

@@ -1,0 +1,25 @@
+.venv/
+.logs/
+__pycache__/
+*.py[cod]
+checkpoints/
+third_party/
+outputs/
+exps/
+/models/repos
+/models/weights
+
+# Local datasets and experiment outputs
+/data/
+/Test/
+*.bag
+
+# Editor and development artifacts
+.vscode/
+.idea/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+devel/
+install/

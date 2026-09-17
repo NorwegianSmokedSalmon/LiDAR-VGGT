@@ -1,0 +1,63 @@
+# MUN-FRL DJI M600 / VLP-16. Calibration from sendtooscar/FAST_LIO.
+common:
+  lid_topic: /velodyne_points
+  imu_topic: /imu/data
+  time_sync_en: false
+  time_offset_lidar_to_imu: 0.0034
+preprocess:
+  lidar_type: 2
+  scan_line: 16
+  scan_rate: 10
+  timestamp_unit: 0
+  blind: 2
+mapping:
+  acc_cov: 0.1
+  gyr_cov: 0.1
+  b_acc_cov: 0.0001
+  b_gyr_cov: 0.0001
+  fov_degree: 270
+  det_range: 100.0
+  extrinsic_est_en: false
+  extrinsic_T:
+  - -0.0593
+  - 0.0468
+  - -0.1249
+  extrinsic_R:
+  - 0.0018
+  - 0.0019
+  - 1.0
+  - 0.0011
+  - -1.0
+  - 0.0019
+  - 1.0
+  - 0.0011
+  - -0.0018
+publish:
+  path_en: false
+  scan_publish_en: false
+  dense_publish_en: true
+  scan_bodyframe_pub_en: false
+pcd_save:
+  pcd_save_en: false
+  interval: -1
+feature_extract_enable: false
+max_iteration: 3
+filter_size_surf: 0.5
+filter_size_map: 0.5
+cube_side_length: 1000.0
+runtime_pos_log_enable: false
+lemon_export:
+  period: 0.05
+  voxel_size: 0.0
+  level_world: true
+  body_from_imu:
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+point_filter_num: 4

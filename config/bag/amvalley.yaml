@@ -1,0 +1,56 @@
+# AMvalley: inspect all 10 Hz frames to retain overlap over nearby terrain.
+image_topic: /left_camera/image/compressed
+height_topic: /dji_osdk_ros/height_above_takeoff
+image_time_offset_s: -0.1
+camera_image_size:
+- 2448
+- 2048
+images_undistorted: false
+fastlio_config: config/bag/fastlio_amvalley.yaml
+takeoff:
+  min_height: 60.0
+  cruise_fraction: 0.5
+  max_climb_speed: 1.0
+  stable_seconds: 3.0
+selection:
+  tracking_width: 640
+  parallax_px: 12.0
+  min_tracks: 60
+  min_track_ratio: 0.25
+  min_baseline_m: 0.5
+  max_features: 800
+  candidate_interval_s: 0.08
+sources:
+  intrinsics: https://github.com/sijieaaa/UAVScenes/blob/main/calibration_results.py
+  extrinsics_and_timing: https://github.com/hku-mars/FAST-LIVO2/blob/main/config/MARS_LVIG.yaml
+  intrinsics_calibration: AMvalley_calibration
+camera_matrix:
+- 1453.88
+- 0.0
+- 1182.53
+- 0.0
+- 1452.85
+- 1045.82
+- 0.0
+- 0.0
+- 1.0
+distortion:
+- -0.052
+- 0.1168
+- 0.0015
+- 0.00013
+- -0.068564
+lidar_to_camera_R:
+- -0.0022464
+- -0.9997299
+- -0.0231319
+- -0.0084211
+- 0.0231501
+- -0.9996966
+- 0.999962
+- -0.0020509
+- -0.0084708
+lidar_to_camera_t:
+- -0.0025563
+- 0.0567484
+- -0.0512149

@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+type: software
+title: LiDAR-VGGT
+repository-code: "https://github.com/NorwegianSmokedSalmon/LiDAR-VGGT"
+authors: &authors
+  - family-names: Wang
+    given-names: Lijie
+  - family-names: Guo
+    given-names: Lianjie
+  - family-names: Xu
+    given-names: Ziyi
+  - family-names: Wang
+    given-names: Qianhao
+  - family-names: Gao
+    given-names: Fei
+  - family-names: Chen
+    given-names: Xieyuanli
+preferred-citation:
+  type: article
+  title: "LiDAR-VGGT: Cross-Modal Coarse-to-Fine Fusion for Globally Consistent and Metric-Scale Dense Mapping"
+  authors: *authors
+  journal: IEEE Robotics and Automation Letters
+  year: 2026
+  volume: "11"
+  issue: "4"
+  start: "4721"
+  end: "4728"
+  doi: "10.1109/LRA.2026.3666387"
+  url: "https://ieeexplore.ieee.org/abstract/document/11399876"

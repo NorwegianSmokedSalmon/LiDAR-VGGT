@@ -1,0 +1,32 @@
+# MUN-FRL DJI M600 downward camera; not the Bell 412 camera calibration.
+image_topic: /camera/image_color/compressed
+height_topic: null
+image_time_offset_s: 0.0
+# The workshop sample was re-recorded in 2025 with original 2022 sensor headers.
+selection_time_basis: image_header
+camera_model: kannala_brandt
+camera_image_size: [1440, 1080]
+images_undistorted: false
+rectification_balance: 0.0
+camera_matrix: [854.383024, 0, 780.324522, 0, 853.285954, 520.690672, 0, 0, 1]
+distortion: [-0.07937700, 0.02228435, -0.03852023, 0.01346873]
+lidar_to_camera_R: [-0.030011, 0.999548, 0.0013029, 0.007985, -0.001063, 0.9999675, 0.999517, 0.030020, -0.0079502]
+lidar_to_camera_t: [-0.0566, 0.3829, -0.0374]
+fastlio_config: config/bag/fastlio_lighthouse.yaml
+takeoff:
+  min_height: 5.0
+  cruise_fraction: 0.5
+  max_climb_speed: 1.0
+  stable_seconds: 3.0
+selection:
+  tracking_width: 640
+  parallax_px: 12.0
+  min_tracks: 60
+  min_track_ratio: 0.25
+  min_baseline_m: 0.5
+  max_features: 800
+  candidate_interval_s: 0.1
+sources:
+  dataset: https://mun-frl-vil-dataset.readthedocs.io/en/latest/
+  camera_calibration: https://mun-frl-vil-dataset.readthedocs.io/en/latest/Calibration.html
+  lidar_imu_calibration: https://github.com/sendtooscar/FAST_LIO/blob/main/config/velodyne.yaml

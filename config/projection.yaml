@@ -1,0 +1,29 @@
+# Uses the same dataset/extrinsics as the original nearest-neighbor pipeline.
+base_config: config/config.yaml
+Projection:
+  # vggt is an explicit approximate fallback; calibrated camera parameters are preferred.
+  intrinsics_source: vggt  # vggt | calibration
+  camera_matrix: null     # original-image 3x3 K, flat or nested
+  camera_image_size: null # [width, height] at which K was calibrated
+  distortion: []          # OpenCV pinhole coefficients, used only on distorted input images
+  images_undistorted: true
+  preprocess_mode: crop   # must match the preprocessing used for saved VGGT predictions
+  time_tolerance_s: 0.06
+  motion_compensation: true
+  min_depth_m: 0.1
+  max_depth_m: 300.0
+  confidence_percentile: 25.0
+  min_confidence: null  # auto: 0.75 for VGGT/Omega, 0.1 for Pi3
+  max_relative_depth_jump: 0.05
+  max_pairs_per_frame: 2000
+  validation_fraction: 0.2
+  ransac_threshold_m: 2.0
+  ransac_max_iterations: 5000
+  ransac_confidence: 0.999
+  ransac_min_inliers: 100
+  ransac_min_inlier_ratio: 0.1
+  ransac_scoring_points: 10000
+  min_inlier_frames: 3
+  export_confidence: null  # auto: model-specific confidence scale
+  export_sample_ratio: 0.05
+  seed: 0

@@ -1,0 +1,54 @@
+Regularization:
+  alpha: 0.1   # Energy-based regularization weight
+  beta: 0.3   # Bounding-box regularization weight
+
+Downsample:
+  vggt_voxel_size: 0.01
+  lidar_voxel_size: 0.3
+
+Chunk:
+  chunk_num: 48
+  chunk_size: 40
+  chunk_step: 25
+  conf_threshold: 0.75
+  sample_ratio: 0.95
+  start_idx: 0
+
+Data:
+  base_path: ./data/
+  dataset: AMtown01/
+  images_dir: data/images
+  body_pcd_dir: data/pcd
+  world_pcd_dir: data/world_pcd
+  npy_dir: data/npy
+  img_time_file: data/timestamps.txt
+  lio_pose_file: data/pose.txt
+
+PCD_sim3:
+  use_regularization_sim3: true
+  use_bbox_strategy: false
+  use_energy_strategy: true
+  downsample: true
+  max_sim3_iterations: 5
+  min_sim3_iterations: 5
+  scale_tolerance: 4e-4
+  icp_threshold: 2.0
+  icp_tolerance: 1e-5
+  icp_max_iterations: 1
+
+Weights:
+  VGGT: models/weights/vggt/model.pt
+  Pi3: models/weights/pi3/model.safetensors
+  VGGT_Omega: models/weights/vggt_omega/vggt_omega_1b_512.pt
+
+pose_sim3:
+  refine_line: false
+  refine_scale: false
+  use_roma: false
+
+calibration:  # Camera-from-input-cloud transform; must match the scan frame.
+  # Prepared AMtown example. Raw-bag sensor presets live in config/bag/.
+  R: [-0.0022464, -0.9997299, -0.0231319,
+   -0.0084211, 0.0231501, -0.9996966,
+    0.9999620, -0.0020509, -0.0084708]
+  t: [-0.0025563, 0.0567484, -0.0512149]

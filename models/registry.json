@@ -1,0 +1,41 @@
+{
+  "vggt": {
+    "repository": "https://github.com/facebookresearch/vggt.git",
+    "code_revision": "a288dd0f14786c93483e45524328726ab7b1b4ce",
+    "hf_repo": "facebook/VGGT-1B",
+    "weight_revision": "860abec7937da0a4c03c41d3c269c366e82abdf9",
+    "filename": "model.pt",
+    "sha256": "d15bf50a8615c8225ed48b51ea5cac673d82442ec0309036df555a053253afe0",
+    "size": 5026874952,
+    "preprocess": "vggt_crop",
+    "confidence": "positive_score",
+    "default_min_confidence": 0.75
+  },
+  "pi3": {
+    "repository": "https://github.com/yyfz/Pi3.git",
+    "code_revision": "9fa3ddb3f8d53041f8b2738df404f62223bbaa7b",
+    "hf_repo": "yyfz233/Pi3",
+    "weight_revision": "ae722e7039287d0c8fde9f11f197f804f44b510c",
+    "filename": "model.safetensors",
+    "sha256": "33580e4702ac671558aedeab1148fd08118f7ce45bdbeb99f3e3cf340062875d",
+    "size": 3834909248,
+    "preprocess": "pi3_area",
+    "confidence": "sigmoid_probability",
+    "default_min_confidence": 0.1
+  },
+  "vggt_omega": {
+    "repository": "https://github.com/facebookresearch/vggt-omega.git",
+    "code_revision": "b2c61f6631d9f344a2d914bfba5d9529d6fc1d35",
+    "hf_repo": "facebook/VGGT-Omega",
+    "weight_revision": "1041e80fc0e911235d3426b0a3d9a81075111a53",
+    "filename": "vggt_omega_1b_512.pt",
+    "sha256": "c02da418b18bb01d0392598d3f6147366bcde1bb70fd08a5e3bf7925b0667934",
+    "size": 4576706117,
+    "preprocess": "omega_balanced",
+    "confidence": "positive_score",
+    "default_min_confidence": 0.75,
+    "preferred_source": "modelscope",
+    "modelscope_repo": "facebook/VGGT-Omega",
+    "modelscope_revision": "40b83ae0801ec4f55144a23cc85fda35c1915881"
+  }
+}
